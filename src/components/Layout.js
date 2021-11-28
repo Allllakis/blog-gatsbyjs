@@ -20,6 +20,7 @@ const toggle = () => {
     <Navbar toggle={toggle} />
     <Sidebar isOpen={isOpen} toggle={toggle}/>
      <main>{children}</main>
+     <Footer />
     </>
   )
 }

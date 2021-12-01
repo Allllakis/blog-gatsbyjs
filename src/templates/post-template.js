@@ -30,6 +30,7 @@ const PostTemplate = ({ data }) => {
             <h2>{title}</h2>
             <p>{date}</p>
             <div className="underline"></div>
+            <MDXRenderer>{body}</MDXRenderer>
           </div>
         
         </article>

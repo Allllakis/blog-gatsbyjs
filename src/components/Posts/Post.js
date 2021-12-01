@@ -32,7 +32,7 @@ const Post = ({ excerpt, frontmatter }) => {
   )
 }
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   margin-bottom: 3rem;
   .info {
     text-align: center;

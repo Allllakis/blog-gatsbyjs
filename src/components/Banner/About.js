@@ -7,7 +7,21 @@ import styled from 'styled-components'
 const About = () => {
   return (
     <Wrapper>
-      Banner About
+      <Title title="About Me" />
+      <StaticImage
+        src="../../assets/banner-about.jpeg"
+        layout="fixed"
+        width={100}
+        height={100}
+        className="img"
+      />
+      <p>
+        Over the weekend, I wanted to experiment with the blog. The features of
+        vuepress have been explored. The soul asks for novelty. A gatsby came
+        under my arm. Well, well, let's try to make a multilingual site and play
+        with graphql, which comes as the default option for data transfer.
+      </p>
+      <SocialLinks styleClass="banner-icons" />
     </Wrapper>
   )
 }

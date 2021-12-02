@@ -10,6 +10,7 @@ const About = () => {
       <Title title="About Me" />
       <StaticImage
         src="../../assets/banner-about.jpeg"
+        alt="face"
         layout="fixed"
         width={100}
         height={100}

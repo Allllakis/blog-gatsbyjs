@@ -4,44 +4,47 @@ import Hero from '../components/Hero'
 import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
 
-const CategoryTemplate = ({data}) => {
- const {allMdx: {nodes: posts}} = data
- const {allMdx: {nodes: {frontmatter: category}}} = data
+const CategoryTemplate = props => {
+  const {
+    data: {
+      categories: { nodes: posts },
+    },
+  } = props
+  const {
+    pageContext: { category },
+  } = props
   return (
-   <Layout>
-     <Hero />
-     <Posts posts={posts} title={`category | ${category}`}/>
-   </Layout>
+    <Layout>
+      <Hero />
+      <Posts posts={posts} title={`category / ${category}`} />
+    </Layout>
   )
 }
 
 export const query = graphql`
-query GestCategories($category: String) {
-  allMdx(
-    sort: {fields: frontmatter___date, order: DESC}
-    filter: {frontmatter: {category: {eq: $category}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        author
-        category
-        slug
-        readTime
-        date(formatString: "MMMM, Do YYYY")
-        image {
-          childImageSharp {
-            gatsbyImageData
+  query GetCategories($category: String) {
+    categories: allMdx(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { category: { eq: $category } } }
+    ) {
+      nodes {
+        excerpt
+        frontmatter {
+          title
+          author
+          category
+          date(formatString: "MMMM, Do YYYY")
+          slug
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
-       }
-      excerpt
+        id
+      }
     }
-    
   }
-}
 `
-
 
 export default CategoryTemplate

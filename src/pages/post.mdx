@@ -5,16 +5,44 @@ import {Counter, LikeButton} from '../components/Complete'
 
 <section className="mdx-page">
 
-## My first MDX file
+<div className="mdx-img">
+
+  ![nice image](../assets/gatsby-1.png)
+
+</div>
+
+## my first MDX file
+
+_I'm baby humblebrag neutra taiyaki af vice bespoke locavore fanny pack_ ramps vexillologist succulents. Normcore etsy pour-over adaptogen skateboard fashion axe, bushwick food truck beard lumbersexual master cleanse actually deep v. **Retro cardigan raw denim franzen kickstarter you probably haven't heard of them literally** aesthetic snackwave four dollar toast. Keffiyeh synth umami, helvetica yr flexitarian jean shorts banh mi cardigan leggings letterpress paleo intelligentsia narwhal.
+
+<div className="code">
+
+```js
+const firstName = 'linda'
+const lastName = 'karter'
+```
+
+</div>
+
+<div className="nice-text">
+
+<h3>nice text</h3>
+
+<FiInfo className="nice-text-icon"></FiInfo>
+
+Favorite for this kind of thing, npx rushes to the rescue. Choosing a minimal starter template to do everything your own way from scratch. The version of gatsby used: 3.
+
+</div>
+
 
 <h2>React Components</h2>
 
 <Counter />
 
 ```jsx
-import React from "react"
-import styled from "styled-components"
-import { AiOutlineLike } from "react-icons/ai"
+import React from 'react'
+import styled from 'styled-components'
+import { AiOutlineLike } from 'react-icons/ai'
 const LikeButton = () => {
   const [value, setValue] = React.useState(0)
   return (
@@ -33,9 +61,15 @@ const LikeButton = () => {
     </Wrapper>
   )
 }
-
 ```
+
 <LikeButton />
+
+
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>
 
 </section>
 
